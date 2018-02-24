@@ -6,6 +6,7 @@ docker上でironとnginxを動かすテンプレート的な奴です。(Linux�
 
 ## Usage
 ```bash
+git clone https://github.com/uma0317/iron-nginx-docker.git .
 docker-compose build
 docker-compose up -d
 ```
