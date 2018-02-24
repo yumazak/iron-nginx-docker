@@ -1,7 +1,8 @@
 # iron-nginx-docker
 ***
-docker上でironとnginxを動かすテンプレート的な奴です。  
+docker上でironとnginxを動かすテンプレート的な奴です。(Linuxを想定)  
 これからフロント周りをいじったりDBを追加する予定です。
+
 
 ## Usage
 ```bash
