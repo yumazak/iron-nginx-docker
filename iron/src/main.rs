@@ -9,7 +9,7 @@ fn main() {
     fn top_handler(_: &mut Request) -> IronResult<Response> {
         let mut data = HashMap::new();
         data.insert("item", "iron");
-        send::html("../public/html/iron", data)
+        send::html("../public/html/iron.html", data)
     }
     let mut router = Router::new();
     router.get("/", top_handler, "root");
