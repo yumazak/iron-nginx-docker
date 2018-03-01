@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["uma <blog3170@gmail.com>"]
 
 [dependencies]
-clam ="0.1.4"
-iron ="0.6.0"
-router = "0.6.0"
+mysql = "*"
+serde = "*"
+serde_json = "*"
+serde_derive = "*"
+iron = "*"
+router = "*"

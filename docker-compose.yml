@@ -2,11 +2,15 @@ version: '2'
 
 services:
   iron:
-    build: .
+    build: ./iron
     volumes:
       - .:/app
     ports:
       - "90:90"
+    links:
+      - db:db
+    depends_on:
+      - db
   server:
     image: nginx:1.13.5-alpine
     ports:
@@ -18,3 +22,13 @@ services:
       - ./public/html:/var/www/html
       - ./public/css:/var/www/css
       - ./public/js:/var/www/js
+  db:
+    image: mysql
+    volumes:
+    - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: mydb
+      # MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - "3306:3306"
