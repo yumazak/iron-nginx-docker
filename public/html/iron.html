@@ -4,6 +4,10 @@
   <script type="text/javascript" src="/js/main.js"></script>
 </head>
 <body>
-  <p class ="test">hello <%= item %></p>
+  <p class ="test">今回の値は<%= num %></p>
+  <form method="POST" action="/rust" enctype="multipart/form-data">
+    <input type="file" name="aFile" /><br />
+    <input type="submit" value="アップロード" />
+  </form>
 </body>
 </html>

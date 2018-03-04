@@ -2,3 +2,5 @@
 /iron/target
 /iron/.gitignore
 /iron/**/*.rs.bk
+/node_modules
+/package-lock.json

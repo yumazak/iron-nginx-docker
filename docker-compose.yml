@@ -1,6 +1,10 @@
 version: '2'
 
 services:
+  datastore:
+    image: busybox
+    volumes:
+        - /var/lib/mysql
   iron:
     build: ./iron
     volumes:
@@ -12,20 +16,21 @@ services:
     depends_on:
       - db
   server:
-    image: nginx:1.13.5-alpine
+    image: nginx
     ports:
       - "80:80"
     links:
     - iron:iron
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./public/html:/var/www/html
       - ./public/css:/var/www/css
       - ./public/js:/var/www/js
   db:
-    image: mysql
-    volumes:
-    - ./db:/var/lib/mysql
+    build: ./db
+    volumes_from:
+      - datastore
     environment:
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_DATABASE: mydb
