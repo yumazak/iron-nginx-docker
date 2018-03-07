@@ -4,3 +4,4 @@
 /iron/**/*.rs.bk
 /node_modules
 /package-lock.json
+/.vagrant
