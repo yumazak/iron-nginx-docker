@@ -1,17 +1,17 @@
 extern crate clam;
 extern crate iron;
-extern crate router;
-use clam::send;
+use clam::template::TemplateBuilder;
 use std::collections::HashMap;
-use router::{Router};
 use iron::prelude::*;
 fn main() {
     fn top_handler(_: &mut Request) -> IronResult<Response> {
         let mut data = HashMap::new();
-        data.insert("item", "iron");
-        send::html("../public/html/iron.html", data)
+        data.insert("item", "hoge");
+        let html = TemplateBuilder::new("../public/html/iron.html")
+            .data(data)
+            .build()
+            .html();
+        html
     }
-    let mut router = Router::new();
-    router.get("/", top_handler, "root");
-    let _server = Iron::new(router).http("0.0.0.0:80").unwrap();
+    let _server = Iron::new(top_handler).http("localhost:3000").unwrap();
 }
