@@ -4,6 +4,18 @@ version = "0.1.0"
 authors = ["uma <blog3170@gmail.com>"]
 
 [dependencies]
+<<<<<<< HEAD
 clam ="0.1.6"
 iron ="0.6.0"
 router = "0.6.0"
+=======
+mysql = "*"
+serde = "*"
+serde_json = "*"
+serde_derive = "*"
+iron = "*"
+router = "*"
+clam = "*"
+multipart = "*"
+params = "*"
+>>>>>>> 5a402412deb000589a542cebd8dc75f4dbdc9019

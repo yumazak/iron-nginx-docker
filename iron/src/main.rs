@@ -1,4 +1,11 @@
+#[macro_use]
+extern crate mysql;
+extern crate serde;
+extern crate serde_json;
 extern crate clam;
+extern crate params;
+#[macro_use]
+extern crate serde_derive;
 extern crate iron;
 use clam::template::TemplateBuilder;
 use std::collections::HashMap;
